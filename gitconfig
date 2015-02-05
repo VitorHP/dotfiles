@@ -5,6 +5,7 @@
 [color]
   ui = auto
 [alias]
+  tlog = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset %C(yellow)[%an]%Creset' --abbrev-commit --date=relative --full-history --all
   aa = add --all
   ap = add --patch
   ca = commit --amend
@@ -29,3 +30,6 @@
   template = ~/.gitmessage
 [fetch]
   prune = true
+[user]
+	email = vitorhp2@gmail.com
+	name = Vitor Bittencourt

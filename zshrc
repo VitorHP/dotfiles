@@ -64,13 +64,19 @@ export EDITOR=$VISUAL
 # ensure dotfiles bin directory is loaded first
 export PATH="$HOME/.bin:/usr/local/bin:$PATH"
 
+# mkdir .git/safe in the root of repositories you trust
+export PATH=".git/safe/../../bin:$PATH"
+
+# path for prefixed npm
+export PATH="$PATH:$HOME/npm/bin"
+
+# bower path for prefixed npm
+export PATH="$PATH:$HOME/npm/lib/node_modules/bower/bin"
+
 # load rbenv if available
 if which rbenv &>/dev/null ; then
   eval "$(rbenv init - --no-rehash)"
 fi
-
-# mkdir .git/safe in the root of repositories you trust
-export PATH=".git/safe/../../bin:$PATH"
 
 # aliases
 [[ -f ~/.aliases ]] && source ~/.aliases
