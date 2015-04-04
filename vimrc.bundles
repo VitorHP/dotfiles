@@ -30,6 +30,14 @@ Plugin 'vim-scripts/ctags.vim'
 Plugin 'vim-scripts/matchit.zip'
 Plugin 'vim-scripts/tComment'
 Plugin 'derekwyatt/vim-scala'
+Plugin 'tpope/vim-eunuch'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'scrooloose/nerdtree'
+Plugin 'rking/ag.vim'
+Plugin 'tpope/vim-commentary'
+Plugin 'vim-scripts/Align'
+Plugin 'terryma/vim-multiple-cursors'
+Plugin 'KabbAmine/zeavim.vim'
 
 if filereadable(expand("~/.vimrc.bundles.local"))
   source ~/.vimrc.bundles.local

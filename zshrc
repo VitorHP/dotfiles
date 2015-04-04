@@ -117,5 +117,40 @@ _load_settings() {
 }
 _load_settings "$HOME/.zsh/configs"
 
+#aliases
+alias tmux="TERM=screen-256color-bce tmux"
+
+# Use OhMyZsh
+export ZSH=$HOME/.oh-my-zsh
+
+# OhMyZsh plugins
+plugins=(git zsh_reload extract)
+
+source $ZSH/oh-my-zsh.sh
+
+export SCALA_HOME="/usr/local/share/scala"
+export PATH="$PATH:$SCALA_HOME/bin"
+
+# Custom prompt config
+ZSH_THEME_GIT_PROMPT_PREFIX="[%{$fg[red]%}"
+ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}] "
+ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[green]%}!"
+ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg[green]%}?"
+ZSH_THEME_GIT_PROMPT_CLEAN=""
+
+PROMPT='%{$fg[cyan]%}%n%{$reset_color%}@%{$fg[yellow]%}%m%{$reset_color%}:${PWD/#$HOME/~} $(git_prompt_info)
+$ '
+
+# Local work config if available
+[[ -f ~/.workrc ]] && source ~/.workrc
+
+# Loading Tmuxinator if available
+[[ -f ~/.bin/tmuxinator.zsh ]] && source ~/.bin/tmuxinator.zsh
+
+# Give windows in tmuxinator their right names
+export DISABLE_AUTO_TITLE=true
+
+source $HOME/.rvm/scripts/rvm
+
 # Local config
 [[ -f ~/.zshrc.local ]] && source ~/.zshrc.local

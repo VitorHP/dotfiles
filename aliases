@@ -30,3 +30,33 @@ alias s="rspec"
 
 # Include custom aliases
 [[ -f ~/.aliases.local ]] && source ~/.aliases.local
+
+#git
+alias gco='git checkout'
+alias gcob='git checkout -b'
+alias gpul='git pull'
+alias gpulr='git pull --rebase'
+alias gall='git add . -A'
+alias gadd='git add'
+alias gs='git status'
+alias gsta='git stash'
+alias gstac='git stash clear'
+alias gpop='git stash pop'
+alias gcm='git commit -m'
+alias gc='git commit'
+alias gp='git push'
+alias gpo='git push origin'
+
+#vagrant
+alias vup='vagrant up'
+alias vpr='vagrant provision'
+alias vssh='vagrant ssh'
+alias vha='vagrant halt'
+alias vre='vagrant reload'
+alias vs='vagrant status'
+
+#rails
+alias rs='bundle exec rails s'
+alias rc='bundle exec rails c'
+alias rdbm='bundle exec rake db:migrate'
+alias rdbr='bundle exec rake db:reset'
