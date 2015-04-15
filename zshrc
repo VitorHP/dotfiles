@@ -73,6 +73,9 @@ export PATH="$PATH:$HOME/npm/bin"
 # bower path for prefixed npm
 export PATH="$PATH:$HOME/npm/lib/node_modules/bower/bin"
 
+# path for Go
+export PATH="$PATH:/usr/local/go/bin
+
 # load rbenv if available
 if which rbenv &>/dev/null ; then
   eval "$(rbenv init - --no-rehash)"
@@ -124,7 +127,10 @@ alias tmux="TERM=screen-256color-bce tmux"
 export ZSH=$HOME/.oh-my-zsh
 
 # OhMyZsh plugins
-plugins=(git zsh_reload extract)
+plugins=(git zsh_reload extract ssh-agent)
+
+# ssh agent identities
+zstyle :omz:plugins:ssh-agent identities id_rsa feedle.pem
 
 source $ZSH/oh-my-zsh.sh
 
@@ -138,8 +144,7 @@ ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[green]%}!"
 ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg[green]%}?"
 ZSH_THEME_GIT_PROMPT_CLEAN=""
 
-PROMPT='%{$fg[cyan]%}%n%{$reset_color%}@%{$fg[yellow]%}%m%{$reset_color%}:${PWD/#$HOME/~} $(git_prompt_info)
-$ '
+PROMPT='%{$fg[cyan]%}%n%{$reset_color%}@%{$fg[yellow]%}%m%{$reset_color%}:${PWD/#$HOME/~} $(git_prompt_info) $ '
 
 # Local work config if available
 [[ -f ~/.workrc ]] && source ~/.workrc
