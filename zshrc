@@ -67,14 +67,9 @@ export PATH="$HOME/.bin:/usr/local/bin:$PATH"
 # mkdir .git/safe in the root of repositories you trust
 export PATH=".git/safe/../../bin:$PATH"
 
-# path for prefixed npm
+# npm path
 export PATH="$PATH:$HOME/npm/bin"
-
-# bower path for prefixed npm
-export PATH="$PATH:$HOME/npm/lib/node_modules/bower/bin"
-
-# path for Go
-export PATH="$PATH:/usr/local/go/bin
+export NODE_PATH=$NODE_PATH:$HOME/npm/lib/node_modules
 
 # load rbenv if available
 if which rbenv &>/dev/null ; then
