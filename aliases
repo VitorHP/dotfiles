@@ -13,10 +13,6 @@ alias -g ONE="| awk '{ print \$1}'"
 alias e="$EDITOR"
 alias v="$VISUAL"
 
-# git
-alias gci="git pull --rebase && rake && git push"
-alias gdc="git diff --cached"
-
 # Bundler
 alias b="bundle"
 
@@ -34,19 +30,23 @@ alias s="rspec"
 
 #git
 alias gco='git checkout'
-alias gcob='git checkout -b'
-alias gpul='git pull'
-alias gpulr='git pull --rebase'
-alias gall='git add . -A'
-alias gadd='git add'
+alias gcb='git checkout -b'
+alias gpu='git pull'
+alias gpr='git pull --rebase'
+alias gci="git pull --rebase && rake && git push"
+alias gal='git add . -A'
+alias gad='git add'
 alias gs='git status'
-alias gsta='git stash'
-alias gstac='git stash clear'
-alias gpop='git stash pop'
-alias gcm='git commit -m'
+alias gst='git stash'
+alias gsc='git stash clear'
+alias gsp='git stash pop'
+gcm() { git commit -m "$*"; }
 alias gc='git commit'
 alias gp='git push'
 alias gpo='git push origin'
+alias gd="git diff"
+alias gdc="git diff --cached"
+
 
 #vagrant
 alias vup='vagrant up'
