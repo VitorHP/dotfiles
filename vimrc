@@ -15,6 +15,7 @@ set showcmd       " display incomplete commands
 set incsearch     " do incremental searching
 set laststatus=2  " Always display the status line
 set autowrite     " Automatically :write before running commands
+set t_Co=256
 
 " Switch syntax highlighting on, when the terminal has colors
 " Also switch on highlighting the last used search pattern.
@@ -51,7 +52,7 @@ augroup vimrcEx
   autocmd FileType markdown setlocal spell
 
   " Automatically wrap at 80 characters for Markdown
-  " autocmd BufRead,BufNewFile *.md setlocal textwidth=80
+  autocmd BufRead,BufNewFile *.md setlocal textwidth=80
 
   " Allow stylesheets to autocomplete hyphenated words
   autocmd FileType css,scss,sass setlocal iskeyword+=-
