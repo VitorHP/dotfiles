@@ -154,3 +154,15 @@ source $HOME/.rvm/scripts/rvm
 
 # Local config
 [[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
+
+# Virtualenv Burrito
+VENVBURRITO="$HOME/.venvburrito"
+VENVBURRITO_esc="\$HOME/.venvburrito"
+
+# startup virtualenv-burrito
+if [ -f $HOME/.venvburrito/startup.sh ]; then
+    . $HOME/.venvburrito/startup.sh
+fi
+
+# NVIM Gruvbox config
+NVIM_TUI_ENABLE_TRUE_COLOR=1
