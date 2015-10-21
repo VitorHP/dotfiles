@@ -1,3 +1,6 @@
+# xterm 256 colors
+export TERM='xterm-256color'
+
 # modify the prompt to contain git branch name if applicable
 git_prompt_info() {
   ref=$(git symbolic-ref HEAD 2> /dev/null)
@@ -164,5 +167,7 @@ if [ -f $HOME/.venvburrito/startup.sh ]; then
     . $HOME/.venvburrito/startup.sh
 fi
 
-# NVIM Gruvbox config
-NVIM_TUI_ENABLE_TRUE_COLOR=1
+# Terminal colors for Gruvbox
+if [ -f $HOME/.vim/bundle/gruvbox/gruvbox_256palette.sh ]; then
+  source "$HOME/.vim/bundle/gruvbox/gruvbox_256palette.sh"
+fi
