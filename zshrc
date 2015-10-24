@@ -125,7 +125,7 @@ export ZSH=$HOME/.oh-my-zsh
 plugins=(git zsh_reload extract ssh-agent)
 
 # ssh agent identities
-zstyle :omz:plugins:ssh-agent identities id_rsa feedle.pem
+zstyle :omz:plugins:ssh-agent identities id_rsa
 
 source $ZSH/oh-my-zsh.sh
 
@@ -168,3 +168,6 @@ fi
 if [ -f $HOME/.vim/bundle/gruvbox/gruvbox_256palette.sh ]; then
   source "$HOME/.vim/bundle/gruvbox/gruvbox_256palette.sh"
 fi
+
+export NVM_DIR="/home/vagrant/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm

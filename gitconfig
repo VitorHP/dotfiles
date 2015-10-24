@@ -32,4 +32,7 @@
   prune = true
 [user]
 	email = vitorhp2@gmail.com
-	name = Vitor Bittencourt
+	name = Vitor HP Bittencourt
+[github]
+	name = VitorHP
+	user = VitorHP
