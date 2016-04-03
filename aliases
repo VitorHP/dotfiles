@@ -46,6 +46,7 @@ alias gp='git push'
 alias gpo='git push origin'
 alias gd="git diff"
 alias gdc="git diff --cached"
+alias gr="git reset"
 
 
 #vagrant
