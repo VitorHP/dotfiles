@@ -67,10 +67,6 @@ export PATH="$HOME/.bin:/usr/local/bin:$PATH"
 # mkdir .git/safe in the root of repositories you trust
 export PATH=".git/safe/../../bin:$PATH"
 
-# npm path
-export PATH="$PATH:$HOME/npm/bin"
-export NODE_PATH=$NODE_PATH:$HOME/npm/lib/node_modules
-
 # load rbenv if available
 if which rbenv &>/dev/null ; then
   eval "$(rbenv init - --no-rehash)"
@@ -169,5 +165,5 @@ if [ -f $HOME/.vim/bundle/gruvbox/gruvbox_256palette.sh ]; then
   source "$HOME/.vim/bundle/gruvbox/gruvbox_256palette.sh"
 fi
 
-export NVM_DIR="/home/vagrant/.nvm"
+export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm

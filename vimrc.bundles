@@ -35,6 +35,7 @@ Plugin 'mattn/webapi-vim'
 Plugin 'mattn/gist-vim'
 Plugin 'vim-scripts/snippetsEmu'
 Plugin 'Yggdroot/indentLine'
+Plugin 'KabbAmine/zeavim.vim'
 
 if filereadable(expand("~/.vimrc.bundles.local"))
   source ~/.vimrc.bundles.local

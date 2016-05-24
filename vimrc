@@ -43,6 +43,8 @@ augroup vimrcEx
   " Set syntax highlighting for specific file types
   autocmd BufRead,BufNewFile Appraisals set filetype=ruby
   autocmd BufRead,BufNewFile *.md set filetype=markdown
+  autocmd BufRead,BufNewFile *.hamlbars set filetype=haml
+  autocmd BufRead,BufNewFile *.jbuilder set filetype=ruby
 
   " Enable spellchecking for Markdown
   autocmd FileType markdown setlocal spell
@@ -125,10 +127,16 @@ nnoremap <C-w>l :tabnext<CR>
 nnoremap <C-w>n :tabnew<CR>
 
 " configure syntastic syntax checking to check on open as well as save
-let b:syntastic_javascript_eslint_exec="./node_modules/.bin/eslint"
-let g:syntastic_check_on_open=1
-let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-"]
+let s:eslint_path = system('PATH=$(npm bin):$PATH && which eslint')
+let g:syntastic_javascript_eslint_exec = substitute(s:eslint_path, '^\n*\s*\(.\{-}\)\n*\s*$', '\1', '')
+
+" let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_auto_loc_list = 1
+" let g:syntastic_debug = 3
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_mode_map = { "mode": "active", "passive_filetypes": ["sass", "haml"] }
 
 " Set spellfile to location that is guaranteed to exist, can be symlinked to
 " Dropbox or kept in Git and managed outside of thoughtbot/dotfiles using rcm.
@@ -155,3 +163,7 @@ endif
 if filereadable($HOME . "/.snippets")
   source ~/.snippets
 endif
+
+let g:zv_file_types = {
+    \ 'Javascript' : 'jQuery,jQuery UI,Sinon,Chai,Meteor,JavaScript',
+    \ }
