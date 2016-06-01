@@ -126,6 +126,13 @@ nnoremap <C-w>h :tabprev<CR>
 nnoremap <C-w>l :tabnext<CR>
 nnoremap <C-w>n :tabnew<CR>
 
+" Search for word under the cursor in Dash
+nmap <silent> <leader>d <Plug>DashSearch
+
+" Shortcut for vim-commentary
+nmap <Bslash><Bslash> <Plug>CommentaryLine
+vmap <Bslash><Bslash> <Plug>Commentary
+
 " configure syntastic syntax checking to check on open as well as save
 let s:eslint_path = system('PATH=$(npm bin):$PATH && which eslint')
 let g:syntastic_javascript_eslint_exec = substitute(s:eslint_path, '^\n*\s*\(.\{-}\)\n*\s*$', '\1', '')
