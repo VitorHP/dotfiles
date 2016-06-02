@@ -54,6 +54,9 @@ augroup vimrcEx
 
   " Allow stylesheets to autocomplete hyphenated words
   autocmd FileType css,scss,sass setlocal iskeyword+=-
+
+  " Remove trailing spaces upon save
+  autocmd BufWritePre * :%s/\s\+$//e
 augroup END
 
 " Softtabs, 2 spaces
