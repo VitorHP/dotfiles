@@ -5,6 +5,7 @@ set nocompatible
 " Leader
 let mapleader = " "
 
+set re=1 "use older and faster regex engine"
 set backspace=2   " Backspace deletes like most programs in insert mode
 set nobackup
 set nowritebackup
@@ -16,6 +17,10 @@ set incsearch     " do incremental searching
 set laststatus=2  " Always display the status line
 set autowrite     " Automatically :write before running commands
 set t_Co=256
+set foldmethod=indent
+set foldlevel=20
+set conceallevel=0
+set synmaxcol=999
 
 " Switch syntax highlighting on, when the terminal has colors
 " Also switch on highlighting the last used search pattern.
@@ -23,6 +28,7 @@ if (&t_Co > 2 || has("gui_running")) && !exists("syntax_on")
   syntax on
 endif
 
+" plugins file
 if filereadable(expand("~/.vimrc.bundles"))
   source ~/.vimrc.bundles
 endif
@@ -85,7 +91,7 @@ set textwidth=80
 set colorcolumn=+1
 
 " Numbers
-set number
+set relativenumber
 set numberwidth=5
 
 " Exclude Javascript files in :Rtags via rails.vim due to warnings when parsing
@@ -177,3 +183,6 @@ endif
 let g:zv_file_types = {
     \ 'Javascript' : 'jQuery,jQuery UI,Sinon,Chai,Meteor,JavaScript',
     \ }
+
+" closetags filetype config
+let g:closetag_filenames = "*.html,*.xhtml,*.jsx,*.js,*.haml"

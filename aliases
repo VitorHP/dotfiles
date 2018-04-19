@@ -1,32 +1,7 @@
-# Unix
-alias tlf="tail -f"
-alias ln='ln -v'
-alias mkdir='mkdir -p'
-alias ...='../..'
-alias l='ls'
-alias ll='ls -al'
-alias lh='ls -Alh'
-alias -g G='| grep'
-alias -g M='| less'
-alias -g L='| wc -l'
-alias -g ONE="| awk '{ print \$1}'"
-alias e="$EDITOR"
-alias v="$VISUAL"
-
 # Bundler
 alias b="bundle"
-
-# Tests and Specs
-alias t="ruby -I test"
-
-# Rails
-alias migrate="rake db:migrate db:rollback && rake db:migrate"
-alias m="migrate"
-alias rk="rake"
-alias s="rspec"
-
-# Include custom aliases
-[[ -f ~/.aliases.local ]] && source ~/.aliases.local
+alias be="bundle exec"
+alias ber="bundle exec rake"
 
 #git
 alias gco='git checkout'
@@ -48,6 +23,37 @@ alias gd="git diff"
 alias gdc="git diff --cached"
 alias gr="git reset"
 
+# heroku
+alias hpgc="heroku pg:backups capture"
+alias hpgu="heroku pg:backups public-url"
+
+# terminal
+alias tlf="tail -f"
+alias ln='ln -v'
+alias mkdir='mkdir -p'
+alias ...='../..'
+alias l='ls'
+alias ll='ls -al'
+alias lh='ls -Alh'
+alias -g G='| grep'
+alias -g M='| less'
+alias -g L='| wc -l'
+alias -g ONE="| awk '{ print \$1}'"
+alias e="$EDITOR"
+alias v="$VISUAL"
+
+# Tests and Specs
+alias t="ruby -I test"
+
+# Rails
+alias migrate="rake db:migrate db:rollback && rake db:migrate"
+alias m="migrate"
+alias rk="rake"
+alias s="rspec"
+alias rs='bundle exec rails s'
+alias rc='bundle exec rails c'
+alias rdbm='bundle exec rake db:migrate'
+alias rdbr='bundle exec rake db:reset'
 
 #vagrant
 alias vup='vagrant up'
@@ -57,8 +63,9 @@ alias vha='vagrant halt'
 alias vre='vagrant reload'
 alias vs='vagrant status'
 
-#rails
-alias rs='bundle exec rails s'
-alias rc='bundle exec rails c'
-alias rdbm='bundle exec rake db:migrate'
-alias rdbr='bundle exec rake db:reset'
+#tmuxinator
+alias mux='tmuxinator'
+
+# Include custom aliases
+[[ -f ~/.aliases.local ]] && source ~/.aliases.local
+

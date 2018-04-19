@@ -1,4 +1,4 @@
-log
-tags
-tmp
-coverage
+/log
+/tags
+/tmp
+/coverage

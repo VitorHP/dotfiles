@@ -167,3 +167,12 @@ fi
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+# Homebrew github token
+export HOMEBREW_GITHUB_API_TOKEN="0b8b0f11737f913e8a3f10115f00c377b059abe7"
+
+# Android stuff
+export ANDROID_HOME=~/Library/Android/sdk
+export PATH=${PATH}:${ANDROID_HOME}/tools
+export PATH=${PATH}:${ANDROID_HOME}/platform-tools
+export PATH="/usr/local/sbin:$PATH"
