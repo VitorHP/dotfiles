@@ -21,6 +21,7 @@ set foldmethod=indent
 set foldlevel=20
 set conceallevel=0
 set synmaxcol=999
+set clipboard=unnamed
 
 " Switch syntax highlighting on, when the terminal has colors
 " Also switch on highlighting the last used search pattern.

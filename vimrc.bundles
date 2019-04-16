@@ -10,35 +10,33 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
 " Define bundles via Github repos
-Plugin 'danro/rename.vim'
+" Plugin 'danro/rename.vim'
 Plugin 'kien/ctrlp.vim'
-Plugin 'pbrisbin/vim-mkdir'
-Plugin 'scrooloose/syntastic'
-Plugin 'slim-template/vim-slim'
+Plugin 'pbrisbin/vim-mkdir'    " creates new directories automatically
+Plugin 'scrooloose/syntastic'  " Syntax Highlight
 Plugin 'thoughtbot/vim-rspec'
 Plugin 'tpope/vim-bundler'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-rails'
-Plugin 'tpope/vim-repeat'
+Plugin 'tpope/vim-repeat'      " Allows repeating commands from plugins
 Plugin 'tpope/vim-surround'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'vim-scripts/ctags.vim'
-Plugin 'tpope/vim-eunuch'
+Plugin 'tpope/vim-eunuch'      " File related commands
 Plugin 'scrooloose/nerdtree'
 Plugin 'rking/ag.vim'
 Plugin 'tpope/vim-commentary'
-Plugin 'vim-scripts/Align'
+Plugin 'vim-scripts/Align' " Alignment functions
 Plugin 'terryma/vim-multiple-cursors'
-Plugin 'morhetz/gruvbox'
+Plugin 'morhetz/gruvbox' " Color scheme
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'mattn/webapi-vim'
 Plugin 'mattn/gist-vim'
 Plugin 'vim-scripts/snippetsEmu'
-Plugin 'Yggdroot/indentLine'
+Plugin 'Yggdroot/indentLine' " vertical lines to show indentation
 Plugin 'rizzatti/dash.vim'
 Plugin 'elixir-lang/vim-elixir'
 Plugin 'mattreduce/vim-mix'
-Plugin 'tmhedberg/matchit'
 Plugin 'alvan/vim-closetag'
 
 if filereadable(expand("~/.vimrc.bundles.local"))
