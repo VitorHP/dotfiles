@@ -146,8 +146,6 @@ PROMPT='%{$fg[cyan]%}%n%{$reset_color%}@%{$fg[yellow]%}%m%{$reset_color%}:${PWD/
 # Give windows in tmuxinator their right names
 export DISABLE_AUTO_TITLE=true
 
-source $HOME/.rvm/scripts/rvm
-
 # Local config
 [[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
 
@@ -166,7 +164,7 @@ if [ -f $HOME/.vim/bundle/gruvbox/gruvbox_256palette.sh ]; then
 fi
 
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
 
 # Homebrew github token
 export HOMEBREW_GITHUB_API_TOKEN="0b8b0f11737f913e8a3f10115f00c377b059abe7"
@@ -176,3 +174,9 @@ export ANDROID_HOME=~/Library/Android/sdk
 export PATH=${PATH}:${ANDROID_HOME}/tools
 export PATH=${PATH}:${ANDROID_HOME}/platform-tools
 export PATH="/usr/local/sbin:$PATH"
+
+# Locale stuff
+export LC_ALL=en_US.UTF-8
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+
