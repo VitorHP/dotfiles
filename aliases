@@ -26,6 +26,7 @@ alias gr="git reset"
 # heroku
 alias hpgc="heroku pg:backups capture"
 alias hpgu="heroku pg:backups public-url"
+alias dbkp='curl $(heroku pg:backups:public-url -r production) -o ~/Downloads/prod.dump'
 
 # terminal
 alias tlf="tail -f"
@@ -63,8 +64,15 @@ alias vha='vagrant halt'
 alias vre='vagrant reload'
 alias vs='vagrant status'
 
+# vim
+alias vim='nvim'
+
 #tmuxinator
 alias mux='tmuxinator'
+alias tenk='mux start tenkaichi'
+
+# postges
+alias rstprod='pg_restore -d tenkaichi_development < ~/Downloads/prod.dump -c -U postgres'
 
 # Include custom aliases
 [[ -f ~/.aliases.local ]] && source ~/.aliases.local

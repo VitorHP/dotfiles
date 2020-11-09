@@ -58,7 +58,7 @@ bindkey "^N" insert-last-word
 bindkey -s "^T" "^[Isudo ^[A" # "t" for "toughguy"
 
 # use vim as the visual editor
-export VISUAL=vim
+export VISUAL=nvim
 export EDITOR=$VISUAL
 
 # ensure dotfiles bin directory is loaded first
@@ -118,7 +118,7 @@ alias tmux="TERM=screen-256color-bce tmux"
 export ZSH=$HOME/.oh-my-zsh
 
 # OhMyZsh plugins
-plugins=(git zsh_reload extract ssh-agent)
+plugins=(git zsh_reload extract ssh-agent heroku)
 
 # ssh agent identities
 zstyle :omz:plugins:ssh-agent identities id_rsa
@@ -178,5 +178,10 @@ export PATH="/usr/local/sbin:$PATH"
 # Locale stuff
 export LC_ALL=en_US.UTF-8
 
+# using the silver searcher ignore file on home dir
+alias ag='ag --path-to-ignore ~/.ignore'
+
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export PATH="/usr/local/opt/openjdk/bin:$PATH"

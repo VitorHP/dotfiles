@@ -75,18 +75,6 @@ set expandtab
 " Display extra whitespace
 set list listchars=tab:»·,trail:·
 
-" Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
-if executable('ag')
-  " Use Ag over Grep
-  set grepprg=ag\ --nogroup\ --nocolor
-
-  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-
-  " ag is fast enough that CtrlP doesn't need to cache
-  let g:ctrlp_use_caching = 0
-endif
-
 " Make it obvious where 80 characters is
 set textwidth=80
 set colorcolumn=+1
@@ -187,3 +175,69 @@ let g:zv_file_types = {
 
 " closetags filetype config
 let g:closetag_filenames = "*.html,*.xhtml,*.jsx,*.js,*.haml"
+
+" keeping undo history
+set undodir=~/.vim/undodir
+set undofile
+
+" fzf
+" If installed using Homebrew
+set rtp+=/usr/local/opt/fzf
+
+" Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
+if executable('ag')
+  " Use Ag over Grep
+  set grepprg=ag\ --nogroup\ --nocolor
+
+  " Use ag in fzf for listing files. Lightning fast and respects .gitignore
+  let $FZF_DEFAULT_COMMAND = 'ag --literal --files-with-matches --nocolor --hidden -g ""'
+
+  " if !exists(":Ag")
+  "   command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
+  "   nnoremap \ :Ag<SPACE>
+  " endif
+endif
+
+" fzf.vim mappings
+nnoremap <leader>; :Buffers<CR>
+nnoremap <C-p> :FZF<CR>
+nnoremap S :Ag<CR>
+nnoremap <leader>/ :History/<CR>
+nnoremap <leader>: :History:<CR>
+nnoremap <leader>gc :Commits<CR>
+nnoremap <leader>gbc :BCommits<CR>
+
+" Augmenting Ag command using fzf#vim#with_preview function
+"   * fzf#vim#with_preview([[options], [preview window], [toggle keys...]])
+"     * For syntax-highlighting, Ruby and any of the following tools are required:
+"       - Bat: https://github.com/sharkdp/bat
+"       - Highlight: http://www.andre-simon.de/doku/highlight/en/highlight.php
+"       - CodeRay: http://coderay.rubychan.de/
+"       - Rouge: https://github.com/jneen/rouge
+"
+"   :Ag  - Start fzf with hidden preview window that can be enabled with "?" key
+"   :Ag! - Start fzf in fullscreen and display the preview window above
+
+command! -bang -nargs=* Ag
+  \ call fzf#vim#ag(<q-args>,
+  \                 <bang>0 ? fzf#vim#with_preview('up:60%')
+  \                         : fzf#vim#with_preview('right:50%:hidden', '?'),
+  \                 <bang>0)
+
+" Use Deoplete
+let g:deoplete#enable_at_startup = 1
+
+" " <TAB>: completion.
+" inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+
+" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
+
+" Fix linting errors
+let g:ale_linters_ignore = {'typescript': ['tslint']}
+let g:ale_fixers = { 'typescript': ['prettier'], 'javascript': ['prettier', 'eslint'] }
