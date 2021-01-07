@@ -35,11 +35,11 @@ Plugin 'junegunn/fzf.vim'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'jreybert/vimagit'
 Plugin 'rhysd/git-messenger.vim'
-Plugin 'Shougo/deoplete.nvim'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets' " snippes for ultisnips
 Plugin 'leafgarland/typescript-vim'
 Plugin 'dense-analysis/ale' " linting
+Plugin 'neoclide/coc.nvim'
 
 if filereadable(expand("~/.vimrc.bundles.local"))
   source ~/.vimrc.bundles.local

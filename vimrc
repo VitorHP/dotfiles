@@ -224,9 +224,6 @@ command! -bang -nargs=* Ag
   \                         : fzf#vim#with_preview('right:50%:hidden', '?'),
   \                 <bang>0)
 
-" Use Deoplete
-let g:deoplete#enable_at_startup = 1
-
 " " <TAB>: completion.
 " inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 
@@ -239,5 +236,7 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 let g:UltiSnipsEditSplit="vertical"
 
 " Fix linting errors
+" https://github.com/dense-analysis/ale/blob/master/doc/ale-typescript.txt
+" https://github.com/Microsoft/typescript-tslint-plugin#editor-support
 let g:ale_linters_ignore = {'typescript': ['tslint']}
 let g:ale_fixers = { 'typescript': ['prettier'], 'javascript': ['prettier', 'eslint'] }
